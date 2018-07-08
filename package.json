@@ -47,6 +47,6 @@
     "url": "null"
   },
   "scripts": {
-    "start": "node Server.js"
+    "start": "node server.js"
   }
 }
