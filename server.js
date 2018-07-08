@@ -43,6 +43,6 @@ app.get('*', function(req, res, next) {
     }
 });
 
-var server = app.listen(config.web.port, function() {
+var server = app.listen(process.env.PORT || 5000, function() {
     config.router(app);
 });
