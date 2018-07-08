@@ -22,9 +22,9 @@ config.session = {
 /****************** List of URL excluded for session check **************************/
 
 config.BASEURL = 'http://localhost:' + config.web.port + 'dalviroo';
-var MongoURI = 'mongodb://krinjalpatel:krinjalpatel@localhost:27017/local';
+config.MONGODB_URI = 'mongodb://krinjalpatel:krinjalpatel@localhost:27017/local';
 // mongoose.connect('mongodb://localhost/local');
-mongoose.connect(MongoURI);
+mongoose.connect(config.MONGODB_URI);
 let db = mongoose.connection;
 
 db.once('open', function () {
