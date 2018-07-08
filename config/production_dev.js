@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-var config = {};
+let config = {};
 
-config.environment = (process.env.NODE_ENV) ? process.env.NODE_ENV : 'development';
+config.environment = (process.env.TIER) ? process.env.TIER : 'development';
 /************************************APP PATH**********************************/
 config.APP_PATH = "../";
 
@@ -22,8 +22,9 @@ config.session = {
 /****************** List of URL excluded for session check **************************/
 
 config.BASEURL = 'http://localhost:' + config.web.port + 'dalviroo';
-
-mongoose.connect('mongodb://localhost/local');
+var MongoURI = 'mongodb://heroku_12345678:random_password@ds029017.mLab.com:29017/heroku_12345678';
+// mongoose.connect('mongodb://localhost/local');
+mongoose.connect(MongoURI);
 let db = mongoose.connection;
 
 db.once('open', function () {
@@ -63,18 +64,12 @@ db.on('reconnected', function () {
 db.on('reconnecting', function () {
     console.log('local DB reconnecting!');
 });
-config.dockerType = {
-    cms: true
-};
 /**********************************ROUTER**************************************/
 config.router = function (app) {
-    if (config.dockerType.cms === true) {
     require('../app/controllers/AllRoutes')(app);
     require('../app/controllers/orderController')(app);
     require('../app/controllers/dishController')(app);
     require('../app/controllers/othersController')(app);
-    require('../app/controllers/kitchenController')(app);
-    }
 };
 
 module.exports = config;

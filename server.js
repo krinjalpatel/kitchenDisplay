@@ -1,11 +1,11 @@
 if(!(process.env.TIER)){
-  process.env.TIER='development';
+  process.env.TIER='production';
 }
 var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
-    config = require('./config/'+ process.env.NODE_ENV || 'production');
+    config = require('./config/'+ process.env.TIER || 'production');
 
 //app setup
 var app = express();
