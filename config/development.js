@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-let config = {};
+var config = {};
 
 config.environment = (process.env.NODE_ENV) ? process.env.NODE_ENV : 'development';
 /************************************APP PATH**********************************/
@@ -63,12 +63,18 @@ db.on('reconnected', function () {
 db.on('reconnecting', function () {
     console.log('local DB reconnecting!');
 });
+config.dockerType = {
+    cms: true
+};
 /**********************************ROUTER**************************************/
 config.router = function (app) {
+    if (config.dockerType.cms === true) {
     require('../app/controllers/AllRoutes')(app);
     require('../app/controllers/orderController')(app);
     require('../app/controllers/dishController')(app);
     require('../app/controllers/othersController')(app);
+    require('../app/controllers/kitchenController')(app);
+    }
 };
 
 module.exports = config;

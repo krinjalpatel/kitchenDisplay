@@ -1,5 +1,5 @@
 if(!(process.env.TIER)){
-  process.env.NODE_ENV='production';
+  process.env.TIER='development';
 }
 var express = require('express'),
     bodyParser = require('body-parser'),
