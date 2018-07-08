@@ -1,7 +1,9 @@
 'use strict';
 const orderModel = require('../models/orders'),
     createdTillDishModel = require('../models/createdTillDish'),
-    co = require('co');
+    fs = require('fs'),
+    co = require('co'),
+    csv = require('fast-csv');
 
 module.exports = function (app) {
     app.get('/kitchen/listing', function (req, res) {
@@ -25,6 +27,15 @@ module.exports = function (app) {
         co(function* () {
             const resSave = yield addCreatedTillDish(req.body);
             res.status(200).send(resSave);
+        }).catch((failedRes) => {
+            res.status(200).send(failedRes);
+        });
+    });
+    app.get('/downloadExampleFile', function (req, res) {
+        co(function* () {
+            if (req.query.type === 'report') {
+                yield mailOutletRes(res);
+            }
         }).catch((failedRes) => {
             res.status(200).send(failedRes);
         });
@@ -92,4 +103,26 @@ const getCreatedTillDishListing = function* (arrOrder) {
     objRes.data = arrOrderList;
     objRes.message = 'Order listing found';
     return objRes;
+}
+const mailOutletRes = function* (res) {
+    const arrOrder = yield orderModel.find({}).populate([{ path: 'dishId', select: '_id dishName price' }]).exec();
+    const resSave = yield getCreatedTillDishListing(arrOrder);
+    var csvStream = csv.createWriteStream({ headers: true });
+    var writeableStream = fs.createWriteStream('reports.csv');
+    csvStream.pipe(writeableStream);
+    for (let objOrderList of resSave.data) {
+        let resCSV = {};
+        resCSV['Name'] = objOrderList.dishId.dishName;
+        resCSV['Quantity'] = objOrderList.quantity;
+        resCSV['Created-till-now'] = objOrderList.createdTillNow;
+        resCSV['Predicted'] = objOrderList.dishId.price;
+        csvStream.write(resCSV);
+    }
+    csvStream.end();
+    writeableStream.on('finish', function () {
+        res.setHeader('Content-disposition', 'attachment; filename=reports.csv');
+        res.setHeader('Content-type', 'text/csv');
+        var filestream = fs.createReadStream('./reports.csv');
+        filestream.pipe(res);
+    });
 }
