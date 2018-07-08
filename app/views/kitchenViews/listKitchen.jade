@@ -1,0 +1,26 @@
+extends ../layout/BaseLayout
+
+block content
+    #page-wrapper 
+      .row
+        .col-md-12
+          h2.page-header.text-center Kitchen Display            
+        .row(style='padding:10px 0px;')
+          .col-md-2
+            .btn-group
+                a.btn.btn-primary(href='')
+                    | Download report 
+                    i.fa.fa-plus
+          .col-md-6.text-right
+        table.table-bordered.dataTable.bulk-action-table.brands.table.table-striped()
+            thead
+                tr
+                  th No.
+                  th Name
+                  th Quantity
+                  th Created Till Now
+                  th Predicted
+                  th Status
+            tbody#dataTableKitchen
+    script(src='../js/kitchenAjax.js')
+    script(type="text/javascript")

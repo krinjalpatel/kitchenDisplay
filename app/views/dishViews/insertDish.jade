@@ -1,0 +1,30 @@
+extends ../layout/BaseLayout
+
+block content
+    #page-wrapper   
+      .row  
+        h2.page-header.text-center Enter Dish Details          
+        form(enctype="multipart/form-data")#dishForm                    
+          div.col-md-6
+            .form-group
+                label Name
+                    span.required *
+                input#dishName.form-control(name='dishName',placeholder='Dish Name')
+            .form-group
+                label Short Name
+                    span.required *
+                input#shortName.form-control(name='shortName',placeholder='Short Name for dish')
+          div.col-md-6 
+            .form-group
+                label Price
+                    span.required *
+                input#price.form-control(placeholder='Price',type='number',name= 'price')
+          .col-md-12.text-center.button-set
+            .col-md-3
+            .col-md-3
+                input#submit.btn.btn-success.btn-block(type='submit')
+            .col-md-3
+                a.btn.btn-info.btn-block(href='/dish/list') Cancel
+            .col-md-4
+    script(src='../js/dishAjax.js')
+    script(type="text/javascript")

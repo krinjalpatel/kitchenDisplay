@@ -1,0 +1,44 @@
+html
+  head
+    title Dilvaroo Food Delivery 
+    // viewport meta tag
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+    // stylesheets
+    link(rel='stylesheet', href='../../css/bootstrap.min.css')
+    link(rel='stylesheet', href='../../theme/plugins/select2/select2.min.css')
+    link(rel='stylesheet', href='../../css/font-awesome.min.css')
+    link(rel='stylesheet', href='../../theme/dist/css/sb-admin-2.css')
+    link(rel='stylesheet', href='../../theme/dist/css/metisMenu.min.css')
+    link(rel='stylesheet', href='../../theme/plugins/jquery-ui-custom/jquery-ui.min.css')
+    link(rel='stylesheet', href='../../theme/plugins/jquery-ui-custom/vigo.datepicker.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='../../theme/plugins/select2/select2-bootstrap.min.css')
+    link(rel='stylesheet', href='../../css/custom.css')
+    link(rel='stylesheet', href='../../css/dataTables.bootstrap.css')
+    link(rel='stylesheet', href='../../css/dataTables.responsive.css')
+    link(rel='stylesheet', href='../../theme/plugins/jquery-time-picker/jquery.timepicker.css')
+    // jquery 
+    script(src='../js/custom.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js') 
+    script(src='../../theme/plugins/jquery-ui-custom/jquery-ui.min.js')
+    script(src='../../theme/dist/js/bootstrap.min.js')     
+    script(src='../js/jquery.form.js')
+    script(src='../../theme/plugins/jquery-time-picker/jquery.timepicker.min.js')  
+    script(src='../../theme/plugins/jquery.dataTables.min.js')
+    script(src='../../theme/plugins/dataTables.bootstrap.min.js')
+    script(src='https://vitalets.github.io/x-editable/assets/select2/select2.js')
+  body   
+    if (checkAuth !== 'OutletLogin')
+        include sidebar
+    block content
+    // common modal can be used inside anywhere
+    .base-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='BaseLayout', aria-hidden='true', style='display: none;')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+          .modal-body                                       
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Ok
+    include footer

@@ -1,0 +1,40 @@
+extends ./layout/BaseLayout
+
+block content
+    #page-wrapper
+      .row
+        .col-md-12(style='margin-top:15px;')
+          h1.page-header Dashboard
+        .col-lg-3.col-md-6
+         .panel.panel-yellow
+           .panel-heading
+             .row
+               .col-xs-3
+                 i.fa.fa-tasks.fa-5x
+               .col-xs-9.text-right
+                 .huge#orderCount
+                 div ORDERS
+           a(href='/order/list')
+             .panel-footer
+               span.pull-left View Details
+               span.pull-right
+                 i.fa.fa-arrow-circle-right
+               .clearfix
+               .clearfix
+        .col-lg-3.col-md-6
+            .panel(style='background-color:#c68c53 !important;')
+                .panel-heading
+                    .row
+                        .col-xs-3
+                            i.fa.fa-cutlery.fa-5x(style='color:#ffffff !important;')
+                        .col-xs-9.text-right(style='color:#ffffff !important;')
+                            .huge#dishCount
+                            div DISH
+                a(href='/dish/list')
+                    .panel-footer(style='color:#c68c53 !important;')
+                        span.pull-left View Details
+                        span.pull-right
+                            i.fa.fa-arrow-circle-right
+                        .clearfix
+                        .clearfix
+        script(src='../js/index.js')

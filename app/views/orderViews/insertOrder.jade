@@ -1,0 +1,26 @@
+extends ../layout/BaseLayout
+
+block content
+    #page-wrapper   
+      .row  
+        h2.page-header.text-center Enter Order Details          
+        form(enctype="multipart/form-data")#orderForm                    
+          div.col-md-6
+            .form-group
+                label Name
+                    span.required *
+                select#dishName.form-control(name='dishName')  
+          div.col-md-6 
+            .form-group
+                label(for='quantity') Quanity
+                    span.required *
+                input#quantity.form-control(placeholder='Quanity',min=1,max=10,type='number',name= 'quantity')
+          .col-md-12.text-center.button-set
+            .col-md-3
+            .col-md-3
+                input#submit.btn.btn-success.btn-block(type='submit')
+            .col-md-3
+                a.btn.btn-info.btn-block(href='/order/list') Cancel
+            .col-md-4
+    script(src='../js/orderAjax.js')
+    script(type="text/javascript")

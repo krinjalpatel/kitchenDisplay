@@ -1,0 +1,21 @@
+body
+    .navbar-default.sidebar(role='navigation')
+      .sidebar-nav.navbar-collapse
+        ul#side-menu.nav.in
+          li
+            a(href='/')
+              i.fa.fa-dashboard.fa-fw
+              |  Dashboard
+          li
+            a(href='/dish/list')
+              i.fa.fa-plus-square-o.fa-fw
+              |  Add Dish
+          li
+            a(href='/order/list')
+              i.fa.fa-plus-square-o.fa-fw
+              |  Order
+          li
+            a(href='/kitchen/list')
+              i.fa.fa-plus-square-o.fa-fw
+              |  Kitchen Display
+input#session_value.btn.btn-primary(type='hidden', value=checkAuth)

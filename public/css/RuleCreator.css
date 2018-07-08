@@ -1,0 +1,128 @@
+[cond-type],
+[action-type]{
+    background-color: #FDFDFD;
+    padding: 4px;
+    position: relative;
+    min-height: 20px;
+    margin-bottom: 2px;
+}
+[cond-type] [cond-type]{
+    margin-left: 30px;
+}
+[cond-type="condition"]{
+    width: 80%;
+}
+[cond-type="condition-group"],
+[action-type="action-group"]{
+    border: 1px solid rgb(239, 239, 239);
+    border-left: 2px solid #00D0FF;    
+    border-right:none;    
+    margin: 22px 0 0 0;
+    min-height: 50px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+[action-type="action-group"]{
+    border-left: 2px solid rgb(34, 196, 55);
+    padding-left: 30px; /* align with the conditions*/
+}
+[cond-type="condition-group"]:first-child{
+    margin: 0;
+}
+[cond-type] [joiner]{
+    position: absolute;
+    top: 50%;
+    left:0;
+    background-color: #fff;
+    padding: 6px 6px;
+    font-size: 0.72em;
+    border: none;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%);
+    border: 1px solid #524A4A;
+    z-index: 1;
+    border-radius: 0px;
+}
+
+.editable,
+.eidtable-click{    
+    color: rgb(123, 123, 123);
+    background-color: #EDEDED;
+    border-bottom: none;
+    margin: 0 2px;
+    padding: 4px 10px;
+    background-color: #F5F5F5;
+}
+
+/*[cond-type="condition-group"]:hover {
+    border: 1px dotted;
+}*/
+[cond-type="condition"]:hover{
+    outline: 1px dotted #333;
+}
+.remove-filter{
+    cursor: pointer;
+}
+.remove-filter{
+    display: none;
+}
+[cond-type="condition"]:hover > .remove-filter{
+    display: block;
+}
+[cond-type="condition-group"]:hover > .remove-filter{
+    display: block;
+}
+[cond-type="condition-group"]:hover{
+    outline: 1px dotted #333;
+}
+[action-type="CONSIDER"]:hover .remove-filter{
+    display: block;
+}
+[action-type="undefined"]:hover .remove-filter{
+    display: block;
+}
+[action-type="CONSIDER"]:hover{
+    outline: 1px dotted #333;
+}
+[action-type="undefined"]:hover{
+    outline: 1px dotted #333;
+}
+button.btn.btn-primary.btn-xs.add-rule-button {
+    margin-left: 30px;
+    margin-top: 19px;
+}
+button.btn.btn-primary.btn-xs.add-action-button {
+    margin-top: 19px;
+}
+.select2-container-multi .select2-choices .select2-search-field input{
+    width:200px !important;
+}
+[cond-type="condition"] > .error{
+    border:1px solid #a94442;
+    color: #a94442;
+}
+[cond-type="condition-group"] > .error{
+    border:2px solid #a94442;
+    color: #a94442;
+}
+[action-type="CONSIDER"] > .error{
+    border:1px solid #a94442;
+    color: #a94442;
+}
+[x-edit="join-type"]  + span.editable-container.editable-inline > select.input-sm{
+    height: 20px;
+    padding: 0px;
+}
+[x-edit="join-type"] + span.editable-container.editable-inline {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: #fff;
+    font-size: 0.72em;
+    border: none;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 0px;
+}

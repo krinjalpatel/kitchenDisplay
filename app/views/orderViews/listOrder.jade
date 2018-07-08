@@ -1,0 +1,24 @@
+extends ../layout/BaseLayout
+
+block content
+    #page-wrapper 
+      .row
+        .col-md-12
+          h2.page-header.text-center Order            
+        .row(style='padding:10px 0px;')
+          .col-md-2
+            .btn-group
+                a.btn.btn-primary(href='/order/insert')
+                    | Add New 
+                    i.fa.fa-plus
+          .col-md-6.text-right
+        table.table-bordered.dataTable.bulk-action-table.brands.table.table-striped()
+            thead
+                tr
+                  th No.
+                  th Name
+                  th Quantity
+                  th Predicted
+            tbody#dataTableOrder
+    script(src='../js/orderAjax.js')
+    script(type="text/javascript")

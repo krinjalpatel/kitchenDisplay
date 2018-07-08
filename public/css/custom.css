@@ -1,0 +1,265 @@
+div.load-bar {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    text-align: center;
+    padding-top: 50;
+}
+.modal {
+   position: absolute;
+   top: 30%;
+   right: 10%;
+   left: 10%;
+   bottom: 0;
+   z-index: 10040;
+   overflow: auto;
+   overflow-y: auto;
+   overflow-x: auto;
+}
+img.ajax-image {
+    content: url('../imgs/ajax-loader.gif');
+    height: 11px;
+    width: 43px;
+}
+.coupons_price{
+    display:none;
+}
+#pageloaddiv {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    background: url(../imgs/ajax-loader.gif) center center no-repeat rgba(0,0,0,.38);
+}
+.display-none{
+    display: none !important;
+}
+#excel-Form{
+    display: none;
+}
+#generate-Coupons-Form{
+    display: none;
+}
+#generate-generic-Form{
+    display: none;
+}
+/* Added by @Amol to hide some button Development */
+.has-error .help-block{
+    color: #a94442;
+}
+.cursor-hand {
+    cursor: pointer;
+}
+#show_add_time{
+    display: none;
+}
+#randomPrefix{
+    display: none;
+}
+#randomLength{
+    display: none;
+}
+#genericCoupon{
+    display: none;
+}
+#actualPrice{
+    /*display: none;*/
+}
+#displayPrice{
+    /*display: none;*/
+}
+.required{
+    color:red;
+}
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+.nopadding{
+    padding: 0px;
+}
+#selectAllNotUsedCouponsActions{
+    display: none;
+}
+.campagin-preview th{
+    font-size: 14px;
+}
+.campagin-preview td{
+    font-size: 13px;
+}
+.exportExcelCouponSet{
+    margin-left: 1%;
+    width: 49%;
+}
+.couponBtnCss{
+    width: 49%;
+    float: left;
+}
+
+@media (min-width: 768px){
+    .modal-dialog {
+        width: 850px;
+        margin: 30px auto;
+    }
+}
+.modal .modal-header:after{
+    content:'';
+    display: table;
+    clear:both;
+}
+.no-results-found,
+table tbody th.no-results-found{
+    padding: 20px 0;
+}
+
+.pagination .disabled{
+    background-color: #F7F7F7;
+    cursor: auto;
+    color: grey;
+}
+.pagination .disabled:hover{
+    background-color: #F7F7F7;
+}
+
+.loading{
+    position: relative;
+}
+.loading:after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: url(../imgs/ajax-loader.gif) center center no-repeat rgba(0,0,0,.38);
+}
+
+#page-wrapper {
+    padding-bottom: 40px;
+}
+
+th.customSorting, th.customSorting_asc, th.customSorting_desc{
+    cursor: pointer;
+}
+.customSorting:after {
+    content: "\f0dc";
+    float: right;
+    font-family: fontawesome;
+    color: rgba(50,50,50,.5);
+
+}
+.customSorting_asc:after {
+    content: "\f0de";
+    float: right;
+    font-family: fontawesome;
+}
+
+.customSorting_desc:after {
+    content: "\f0dd";
+    float: right;
+    font-family: fontawesome;
+}
+#showImageCustomerror{
+    display: none;
+}
+#showLargeImageCustomerror{
+    display: none;
+}
+#showQRImgCustomErr{
+    display: none;
+}
+.brandFranchiseDiv {
+    border:1px solid #ccc;
+    height: 600px;
+    overflow: auto;
+}
+
+.remove-btn {
+    position: absolute;
+    right: 0;
+}
+
+.addMoreMaps {
+    float: left;
+    position: absolute;
+    bottom: 5px;
+}
+
+.franchiseInstructions {
+    background: #ccc;
+    height: 240px;
+    border:1px solid #ccc;
+    margin:5px 0 0 0;
+    position: relative;
+}
+
+.franchiseMapContainer {
+    border:1px solid #ccc;
+    height:340px;
+    margin: 10px;
+    float: left;
+    overflow: auto;
+}
+
+
+.franchiseLbl {
+    margin:5px 0 5px 10px;
+    float: left;
+    clear: both;
+}
+
+.franchiseSpan {
+    font-size: 22px;
+    color : #d9534f;
+    clear: both;
+}
+.selectFranchisetList {
+    margin:0 0 10px 10px;
+    height: 30px;
+    line-height: 30px;
+    width: 90%;
+}
+#lastRefreshTime{
+    margin: 15px 15px 0 0;
+    float: right;
+}
+
+.delBtn{
+    float :right;
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    padding: 7px 8px;
+    margin: 1px 5px 0px 0px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    position: relative;
+    top: 1px;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+/** brand manager css */
+@media (max-width: 480px){
+    [brand-top-menu] li[brnd-form]{
+        display: block;
+    }
+    [brand-top-menu] li[user-info]{
+        float: right;
+    }
+}
